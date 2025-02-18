@@ -6,23 +6,23 @@ function FormularioRegistro(){
     }
     return(
         <div className="px-20">
-            <h2 className="text-center font-bold text-xl my-6">Formulario de Registro</h2>
+            <h2 className="text-center font-bold text-xl my-6">Formulario Registro</h2>
             <Form
                 onFinish={guardarFormulario}
                 layout="vertical">
                 <Item name="nombreCompleto" label="Nombre completo" rules={[
-                    {required: true, message: "se requiere este dato"}
+                    {required: true, message: "Este campo no debe de quedar vacio"}
                     ]}>
                     <Input />
                 </Item>
                 <Item name="correo" label="Correo" rules={[
-                    {type: "email", message: "No concide el formato"},
-                    {required: true, message: "se requiere este dato"}
+                    {type: "email", message: "Los campos no coinciden"},
+                    {required: true, message: "Este campo no debe de quedar vacio"}
                     ]}>
                     <Input />
                 </Item>
                 <Item name="contraseña" label="Contraseña" rules={[
-                    {required: true, message: "se requiere este dato"}
+                    {required: true, message: "Este campo no debe de quedar vacio"}
                     ]}>
                     <Password />
                 </Item>
