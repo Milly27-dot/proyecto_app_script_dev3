@@ -1,0 +1,16 @@
+//<script type="text/jsx">
+
+    function Routes() {
+      return (
+        <Router>
+            <Header />
+            <Redirect to="/" />
+            <Switch>
+              <Route exact path="/" component={Inicio} />
+              <Route exact path="/FormularioRegistro" component={FormularioRegistro} />
+            </Switch>
+        </Router>
+      );
+    }
+    
+    //</script>
