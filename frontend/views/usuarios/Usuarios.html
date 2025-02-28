@@ -1,21 +1,29 @@
 //<script type="text/jsx">
 
- function Usuarios() {
+function Usuarios() {
 
   const [dataSource, setDataSource] = useState([]);
   
-    useEffect(listarUsuarios, [])
+    useEffect(listarUsuarios, []);
+    const history = useHistory();
 
     function listarUsuarios() {
         google.script.run
         .withSuccessHandler(res => {
-        console.log(res);
           const usuarios = JSON.parse(res);
           let arreglo = [];
+
           usuarios.map(usuario =>{
             arreglo.push({
               key: usuario.id,
-              ...usuario
+              ...usuario,
+              acciones:  
+              <Button
+              onClick={() => {
+                history.push("/FormularioRegistro/" + usuario.id);
+              }}>
+              Editar
+            </Button>
             })
           })
 
@@ -39,6 +47,11 @@
         title: 'Contraseña',
         dataIndex: 'contraseña',
         key: 'contraseña',
+      },
+      {
+        title: 'Acciones',
+        dataIndex: 'acciones',
+        key: 'acciones',
       },
     ];
   
