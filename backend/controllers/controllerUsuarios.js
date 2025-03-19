@@ -6,7 +6,7 @@ function guardarUsuario(usuario) {
         Insert(JSON.parse(usuario), sheetUsuarios);
         //sheetUsuarios.appendRow([id, nombreCompleto, correo, contraseña])
         return {
-            titulo: "Registro Correcto",
+            titulo: "Registro Correcto", 
             descripcion: "Ya se encuentra el usuario en la base de datos.",
         }    
     } catch (error) {
